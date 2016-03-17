@@ -7,13 +7,13 @@
 #!/bin/sh -e
 
 # Take a screenshot
-scrot /home/alan/Pictures/i3lock_pic.png
+scrot ~/Pictures/i3lock_pic.png
 
 #Pixellate it 10x
-mogrify -scale 10% -scale 1000% /home/alan/Pictures/i3lock_pic.png
+mogrify -scale 10% -scale 1000% ~/Pictures/i3lock_pic.png
 
 #Lock screen displaying this image.
-i3lock -i /home/alan/Pictures/i3lock_pic.png
+i3lock -i ~/Pictures/i3lock_pic.png
 
 # Turn the screen off after a delay.
 sleep 60; pgrep i3lock && xset dpms force off
