@@ -189,7 +189,8 @@ bar {
 				statusline #00abfc
 				}
 #        status_command i3status -c ~/.i3/i3status.conf
-		status_command conky -c ~/.i3/.conkyrc_i3
+		status_command conky -c ~/.i3/conkyrc_i3
+#		status_command i3blocks -c ~/.i3/i3blocks/i3blocks.conf
 }
 
 #######################################################################

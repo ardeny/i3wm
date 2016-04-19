@@ -70,9 +70,10 @@ IP:${addr wlp3s0} | Up:${upspeed wlp3s0} Down:${downspeed wlp3s0} | ${endif}\
 # Free space on /home
 /Home:${fs_used /home/}/${fs_free /home} | \
 #BATT ${battery BAT0} 
-${time %Y.%m.%d %A} ${time %H:%M:%S}
+${time %Y.%m.%d %A} ${time %H:%M:%S} | \
 # Weather temperature
 #${exec weather --headers="Temperature" -q | awk '/Temperature/ {print $2}'}C ${exec weather --headers="Sky conditions" -q | awk '/Sky conditions/ {print $3 " " $4}'} | \
+${execi 3600 ~/.i3/weather.sh}
 # Volume %
 #Vol: ${mixer}
 #V ${exec pactl list sinks | grep "Volume: 0"| tail -n 1 | awk '{print substr($3, 1, index($3, "%") - 1)}'}%
